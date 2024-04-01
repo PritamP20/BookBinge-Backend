@@ -21,8 +21,12 @@ exports.createbooks=async(req, res, next)=>{
 }
 
 exports.getAllBooks= async (req, res)=>{
-    const allBooks = await Book.find()
-    res.status(201).json(allBooks)
+    try{
+        const allBooks = await Book.find()
+        res.status(201).json(allBooks)
+    }catch(e){
+        console.log("This is the error",e.message)
+    }
 }
 
 exports.getBooksByCate = async (req, res)=>{
