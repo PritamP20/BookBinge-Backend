@@ -4,7 +4,6 @@ const data = JSON.parse(fs.readFileSync("data.json","utf8"));
 const router = express.Router();
 const books = data.booksdetail;
 const model = require("../model/books")
-require("../db/db");
 const Book = model.Book
 
 exports.createbooks=async(req, res, next)=>{

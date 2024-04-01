@@ -8,12 +8,12 @@ const server = express()
 const cors = require("cors")
 require("dotenv").config()
 
-// main().catch((err)=> console.log(err))
-// async function main() {
-//     // console.log(process.env.MONGO_DB)
-//     await mongoose.connect("mongodb+srv://pripritam7:42I2OCzeZFsEYfT2@cluster0.sokdjwb.mongodb.net/BookBinge");
-//     console.log("connected to database");
-//   }
+main().catch((err)=> console.log(err))
+async function main() {
+    // console.log(process.env.MONGO_DB)
+    await mongoose.connect("mongodb+srv://pripritam7:42I2OCzeZFsEYfT2@cluster0.sokdjwb.mongodb.net/BookBinge");
+    console.log("connected to database");
+  }
 
 server.use(cors())
 server.use(express.json())
