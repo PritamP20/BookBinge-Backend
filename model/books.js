@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const {Schema} = mongoose;
 
 const booksSchema = new Schema({
-    // id:{type: Number, required: true, unique: [true, 'enter a unique id']},
+    id:{type: Number, required: true, unique: [true, 'enter a unique id']},
     name:{type: String, required: true},
     by:{type: String, required: true},
     url:{type: String, required: true},
@@ -13,7 +13,9 @@ const booksSchema = new Schema({
     listedBy : {type: Object},
     possesdBy: {type: Object},
     listedOn: {type: Object},
-    lastDate:{type: Date}
+    possedOn: {type: Object},
+    lastDate:{type: Date},
+    duration:{type: Number}
 
 })
 
