@@ -4,6 +4,7 @@ const fs = require("fs")
 const booksRouter = require('./routes/booksRoute')
 const userRouter = require('./routes/user')
 const authRouter = require('./routes/auth')
+const collectionRouter = require('./routes/collection')
 const mongoose = require("mongoose")
 const morgan = require("morgan")
 const server = express()
@@ -45,6 +46,7 @@ server.use(morgan('dev'))
 server.use('/auth', authRouter.router)
 server.use('/books',booksRouter.router)
 server.use('/users', auth, userRouter.router)
+server.use('/collection', collectionRouter.router)
 
 
 server.listen(8081, ()=>{

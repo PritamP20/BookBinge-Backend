@@ -1,8 +1,7 @@
-const mongooose = require('mongoose')
-const {Schema} = mongooose;
+const mongoose = require("mongoose")
+const {Schema} = mongoose;
 
-const userSchema = new Schema({
-    name: {type: String, required: true},
+const collectionSchema = new Schema({
     email: {
         type: String,
         validate: {
@@ -13,9 +12,7 @@ const userSchema = new Schema({
         },
         required: [true, 'User email required']
     },
-    password: {type: String, minLength: 6, required: true},
-    token: String,
-    phoneNo: {type:Number, minLength: 10}
+    collection: {type: Object}
 })
 
-exports.User = mongooose.model('User', userSchema);
+exports.Collection = mongoose.model('Collection', collectionSchema)
