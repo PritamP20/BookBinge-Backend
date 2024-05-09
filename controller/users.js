@@ -11,6 +11,16 @@ exports.getUser= async(req, res)=>{
     }
 }
 
+exports.getUserByMail = async (req, res)=>{
+    try {
+        const userData = await User.findOne({email: req.body.email})
+        res.status(201).json(userData)
+    } catch (error) {
+        console.log(error)
+        res.status(201).json(error)
+    }
+}
+
 exports.replaceUser = async (res, req)=>{
     try {
         const doc = await User.findOneAndReplace({email: req.body.email}, req.body, {new: true})
@@ -39,10 +49,4 @@ exports.deleteUser = async (res, req)=>{
     }   
 }
 
-exports.Books = async (res, req)=>{
-    try {
-        
-    } catch (error) {
-        
-    }
-}
+

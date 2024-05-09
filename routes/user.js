@@ -3,7 +3,7 @@ const router = express.Router()
 const userController = require('../controller/users')
 
 router
-    .get('/', userController.getUser)
+    .get('/', userController.getUserByMail)
     .put('/', userController.replaceUser)
     .patch('/', userController.updateUser)
     .delete('/', userController.deleteUser)
