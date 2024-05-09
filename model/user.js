@@ -15,6 +15,8 @@ const userSchema = new Schema({
     },
     password: {type: String, minLength: 6, required: true},
     token: String,
+    phoneNo: {type:Number, minLength: 10},
+    booksPossesed: {type: Object}
 })
 
 exports.User = mongooose.model('User', userSchema);

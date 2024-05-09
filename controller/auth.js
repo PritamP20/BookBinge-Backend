@@ -48,15 +48,16 @@ exports.login = async (req, res)=>{
 }
 
 exports.signUp = async (req, res) => {
-    const user = new User(req.body);
+    const data = {...req.body}
+    console.log(data)
+    const user = new User(data);
     // var token = jwt.sign({email: req.body.email}, process.env.SECRET,{algorithm: 'RS256'});
-    var token = jwt.sign({email: req.body.email, name:req.body.name}, privateKey,{algorithm: 'RS256'});
+    var token = jwt.sign({email: data.email, name: data.name}, privateKey,{algorithm: 'RS256'});
   
     // const hash = bcrypt.hashSync(myPlaintextPassword, saltRounds);
     try {
         const hashPassword = bcrypt.hashSync(req.body.password, 10);
         user.password = hashPassword;
-    
         user.token = token;
         user
         .save()

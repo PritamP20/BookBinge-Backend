@@ -38,3 +38,11 @@ exports.deleteUser = async (res, req)=>{
         res.status(201).json({error})
     }   
 }
+
+exports.Books = async (res, req)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+}
